@@ -1,19 +1,21 @@
 package com.xsqwe.admin;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+
 
 @SpringBootApplication
-public class AdminApplication extends SpringBootServletInitializer {
+@MapperScan("com.xsqwe.admin.mapper")
+public class AdminApplication  {
 
     public static void main(String[] args) {
         SpringApplication.run(AdminApplication.class, args);
     }
 
-    @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
-        return builder.sources(AdminApplication.class);
-    }
+    // 打war 包
+//    @Override
+//    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+//        return builder.sources(AdminApplication.class);
+//    }
 }

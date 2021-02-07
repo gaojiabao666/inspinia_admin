@@ -12,10 +12,17 @@
     <artifactId>admin</artifactId>
     <version>1.0.0</version>
     <name>admin</name>
+    <!--打包方式 war-->
     <packaging>war</packaging>
     <description>this is inspinia_admin project</description>
     <properties>
         <java.version>1.8</java.version>
+        <!--
+        想要修改版本, 1. 直接引入具体版本的依赖, 根据maven 的就近依赖原则
+        2. 重新在<properties>标签中声明版本, 根据maven 属性的就近有限原则
+
+        -->
+        <mysql.version>5.1.49</mysql.version>
     </properties>
     <dependencies>
         <dependency>
@@ -49,22 +56,48 @@
             <scope>test</scope>
         </dependency>
 
-        <!--添加servlet-api的依赖,用来打war包  -->
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <!--最终打成war包，排除内置的tomcat-->
+<!--        &lt;!&ndash;添加servlet-api的依赖,用来打war包  &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>javax.servlet</groupId>-->
+<!--            <artifactId>javax.servlet-api</artifactId>-->
+<!--            <scope>provided</scope>-->
+<!--        </dependency>-->
+<!--        &lt;!&ndash;最终打成war包，排除内置的tomcat&ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-web</artifactId>-->
+<!--            <exclusions>-->
+<!--                <exclusion>-->
+<!--                    <groupId>org.springframework.boot</groupId>-->
+<!--                    <artifactId>spring-boot-starter-tomcat</artifactId>-->
+<!--                </exclusion>-->
+<!--            </exclusions>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-tomcat</artifactId>
-                </exclusion>
-            </exclusions>
+            <artifactId>spring-boot-starter-data-jdbc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <!--spring 版本仲裁 是8.0, 通过maven 的就近原则更改版本-->
+<!--            <version>5.1.47</version>-->
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.alibaba</groupId>-->
+<!--            <artifactId>druid</artifactId>-->
+<!--            <version>1.1.17</version>-->
+<!--        </dependency>-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid-spring-boot-starter</artifactId>
+            <version>1.1.17</version>
+        </dependency>
+        <!--引入 mybatis 的场景启动器-->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>2.1.4</version>
         </dependency>
     </dependencies>
 
