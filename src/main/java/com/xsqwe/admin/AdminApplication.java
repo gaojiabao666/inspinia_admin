@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-@MapperScan("com.xsqwe.admin.mapper")
+//@MapperScan("com.xsqwe.admin.mapper")
 public class AdminApplication  {
 
     public static void main(String[] args) {

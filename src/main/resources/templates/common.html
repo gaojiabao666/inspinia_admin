@@ -192,7 +192,7 @@
                         <li>
                             <a href="#"><i class="fa fa-table"></i> <span class="nav-label">表格</span><span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level collapse">
-                                <li><a href="table_basic.html">静态表格</a></li>
+                                <li><a th:href="@{/userTable}">静态表格</a></li>
                                 <li><a href="table_data_tables.html">数据表格</a></li>
                                 <li><a href="table_foo_table.html">Foo 表格</a></li>
                                 <li><a href="jq_grid.html">jqGrid</a></li>
@@ -260,7 +260,7 @@
         </div>
 
         <div id="page-wrapper" class="gray-bg">
-        <div class="row border-bottom">
+        <div class="row border-bottom" id="pageTop">
         <nav class="navbar navbar-static-top  " role="navigation" style="margin-bottom: 0">
         <div class="navbar-header">
             <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>

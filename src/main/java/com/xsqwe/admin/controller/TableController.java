@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
  */
 @Controller
 public class TableController {
-    @GetMapping("/table")
+    @GetMapping("/userTable")
     public String table(){
-        return "table/table.html";
+        return "table/table_basic.html";
     }
 }

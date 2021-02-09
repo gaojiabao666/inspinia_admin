@@ -1,3 +1,4 @@
+
 spring:
   datasource:
     url: jdbc:mysql://gg.xsqwe.com:3306/inspinia_admin?useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true&useSSL=false&useJDBCCompliantTimezoneShift=true&serverTimezone=UTC
@@ -37,4 +38,7 @@ mybatis: # 指定mybatis 的全局配置文件位置
   mapper-locations: classpath:mybatis/mapper/*.xml  # 指定sql 映射文件位置
   configuration:    # 指定mybatis 中的全局相关配置项
     map-underscore-to-camel-case: true    # 开启驼峰命名
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 
+server:
+  port: 8081
